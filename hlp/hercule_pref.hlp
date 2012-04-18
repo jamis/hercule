@@ -1,0 +1,11 @@
+This form is where you can modify the settings of the game.
+
+"Auto Deduce", when on, will automatically deduce certain values for you.  For instance, when you assert that a given tile is in a given column, all other instances of that tile in the same row will be automatically removed, since they can no longer be there.  Likewise, when you eliminate one of two remaining instances of a tile, the remaining tile will automatically be asserted, since it cannot be anywhere else.  Turning this off makes the game considerably harder, so use with caution!
+
+"Auto Advance" causes the next puzzle to be automatically generated when you finish the current puzzle.  Turn this off if you like to choose your puzzles, or if you like to change the handicap between puzzles.
+
+"Warn on Bad Assumptions" will cause a form to popup whenever you try to eliminate or assert a tile incorrectly.  At the end of the puzzle, you will be shown how many times you were warned during the duration of the puzzle.  Turning this off makes the puzzle much harder, so use with caution!
+
+"Show Timer", if checked, causes the time spent on the current puzzle to be shown in the lower right.
+
+"Read Clues Left-to-Right" causes the clues to be laid out by row, from left-to-right, top-to-bottom.  Some people, however, prefer to read the clues by column -- top-to-bottom, left-to-right.  Unchecking this option will lay clues out by column, instead of by row.

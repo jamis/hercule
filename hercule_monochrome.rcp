@@ -1,0 +1,107 @@
+stringtable id TileSet_Names "" "Letters" "Numbers" "Dots" "Shapes" "Greek" "Arrows" "Punctuation" "Music"
+
+bitmapfamily id Tile_l11 "bmp/l11_1bpp.bmp" "bmp/l11_2bpp.bmp" "bmp/l11_4bpp.bmp"
+bitmapfamily id Tile_l12 "bmp/l12_1bpp.bmp" "bmp/l12_2bpp.bmp" "bmp/l12_4bpp.bmp"
+bitmapfamily id Tile_l13 "bmp/l13_1bpp.bmp" "bmp/l13_2bpp.bmp" "bmp/l13_4bpp.bmp"
+bitmapfamily id Tile_l14 "bmp/l14_1bpp.bmp" "bmp/l14_2bpp.bmp" "bmp/l14_4bpp.bmp"
+bitmapfamily id Tile_l15 "bmp/l15_1bpp.bmp" "bmp/l15_2bpp.bmp" "bmp/l15_4bpp.bmp"
+
+bitmapfamily id Tile_l21 "bmp/l21_1bpp.bmp" "bmp/l21_2bpp.bmp" "bmp/l21_4bpp.bmp" 
+bitmapfamily id Tile_l22 "bmp/l22_1bpp.bmp" "bmp/l22_2bpp.bmp" "bmp/l22_4bpp.bmp"
+bitmapfamily id Tile_l23 "bmp/l23_1bpp.bmp" "bmp/l23_2bpp.bmp" "bmp/l23_4bpp.bmp"
+bitmapfamily id Tile_l24 "bmp/l24_1bpp.bmp" "bmp/l24_2bpp.bmp" "bmp/l24_4bpp.bmp"
+bitmapfamily id Tile_l25 "bmp/l25_1bpp.bmp" "bmp/l25_2bpp.bmp" "bmp/l25_4bpp.bmp"
+
+bitmapfamily id Tile_l31 "bmp/l31_1bpp.bmp" "bmp/l31_2bpp.bmp" "bmp/l31_4bpp.bmp"
+bitmapfamily id Tile_l32 "bmp/l32_1bpp.bmp" "bmp/l32_2bpp.bmp" "bmp/l32_4bpp.bmp"
+bitmapfamily id Tile_l33 "bmp/l33_1bpp.bmp" "bmp/l33_2bpp.bmp" "bmp/l33_4bpp.bmp"
+bitmapfamily id Tile_l34 "bmp/l34_1bpp.bmp" "bmp/l34_2bpp.bmp" "bmp/l34_4bpp.bmp"
+bitmapfamily id Tile_l35 "bmp/l35_1bpp.bmp" "bmp/l35_2bpp.bmp" "bmp/l35_4bpp.bmp"
+
+bitmapfamily id Tile_l41 "bmp/l41_1bpp.bmp" "bmp/l41_2bpp.bmp" "bmp/l41_4bpp.bmp"
+bitmapfamily id Tile_l42 "bmp/l42_1bpp.bmp" "bmp/l42_2bpp.bmp" "bmp/l42_4bpp.bmp"
+bitmapfamily id Tile_l43 "bmp/l43_1bpp.bmp" "bmp/l43_2bpp.bmp" "bmp/l43_4bpp.bmp"
+bitmapfamily id Tile_l44 "bmp/l44_1bpp.bmp" "bmp/l44_2bpp.bmp" "bmp/l44_4bpp.bmp"
+bitmapfamily id Tile_l45 "bmp/l45_1bpp.bmp" "bmp/l45_2bpp.bmp" "bmp/l45_4bpp.bmp"
+
+bitmapfamily id Tile_l51 "" "bmp/l71_2bpp.bmp" "bmp/l71_4bpp.bmp"
+bitmapfamily id Tile_l52 "" "bmp/l72_2bpp.bmp" "bmp/l72_4bpp.bmp"
+bitmapfamily id Tile_l53 "" "bmp/l73_2bpp.bmp" "bmp/l73_4bpp.bmp"
+bitmapfamily id Tile_l54 "" "bmp/l74_2bpp.bmp" "bmp/l74_4bpp.bmp"
+bitmapfamily id Tile_l55 "" "bmp/l75_2bpp.bmp" "bmp/l75_4bpp.bmp"
+
+bitmapfamily id Tile_l61 "" "bmp/l81_2bpp.bmp"
+bitmapfamily id Tile_l62 "" "bmp/l82_2bpp.bmp"
+bitmapfamily id Tile_l63 "" "bmp/l83_2bpp.bmp"
+bitmapfamily id Tile_l64 "" "bmp/l84_2bpp.bmp"
+bitmapfamily id Tile_l65 "" "bmp/l85_2bpp.bmp"
+
+bitmapfamily id Tile_l71 "" "bmp/l91_2bpp.bmp"
+bitmapfamily id Tile_l72 "" "bmp/l92_2bpp.bmp"
+bitmapfamily id Tile_l73 "" "bmp/l93_2bpp.bmp"
+bitmapfamily id Tile_l74 "" "bmp/l94_2bpp.bmp"
+bitmapfamily id Tile_l75 "" "bmp/l95_2bpp.bmp"
+
+bitmapfamily id Tile_l81 "" "bmp/l10_1_2bpp.bmp"
+bitmapfamily id Tile_l82 "" "bmp/l10_2_2bpp.bmp"
+bitmapfamily id Tile_l83 "" "bmp/l10_3_2bpp.bmp"
+bitmapfamily id Tile_l84 "" "bmp/l10_4_2bpp.bmp"
+bitmapfamily id Tile_l85 "" "bmp/l10_5_2bpp.bmp"
+
+bitmapfamily id Tile_s11 "bmp/s11_1bpp.bmp" "bmp/s11_2bpp.bmp" "bmp/s11_4bpp.bmp"
+bitmapfamily id Tile_s12 "bmp/s12_1bpp.bmp" "bmp/s12_2bpp.bmp" "bmp/s12_4bpp.bmp"
+bitmapfamily id Tile_s13 "bmp/s13_1bpp.bmp" "bmp/s13_2bpp.bmp" "bmp/s13_4bpp.bmp"
+bitmapfamily id Tile_s14 "bmp/s14_1bpp.bmp" "bmp/s14_2bpp.bmp" "bmp/s14_4bpp.bmp"
+bitmapfamily id Tile_s15 "bmp/s15_1bpp.bmp" "bmp/s15_2bpp.bmp" "bmp/s15_4bpp.bmp"
+
+bitmapfamily id Tile_s21 "bmp/s21_1bpp.bmp" "bmp/s21_2bpp.bmp" "bmp/s21_4bpp.bmp" 
+bitmapfamily id Tile_s22 "bmp/s22_1bpp.bmp" "bmp/s22_2bpp.bmp" "bmp/s22_4bpp.bmp"
+bitmapfamily id Tile_s23 "bmp/s23_1bpp.bmp" "bmp/s23_2bpp.bmp" "bmp/s23_4bpp.bmp"
+bitmapfamily id Tile_s24 "bmp/s24_1bpp.bmp" "bmp/s24_2bpp.bmp" "bmp/s24_4bpp.bmp"
+bitmapfamily id Tile_s25 "bmp/s25_1bpp.bmp" "bmp/s25_2bpp.bmp" "bmp/s25_4bpp.bmp"
+
+bitmapfamily id Tile_s31 "bmp/s31_1bpp.bmp" "bmp/s31_2bpp.bmp" "bmp/s31_4bpp.bmp"
+bitmapfamily id Tile_s32 "bmp/s32_1bpp.bmp" "bmp/s32_2bpp.bmp" "bmp/s32_4bpp.bmp"
+bitmapfamily id Tile_s33 "bmp/s33_1bpp.bmp" "bmp/s33_2bpp.bmp" "bmp/s33_4bpp.bmp"
+bitmapfamily id Tile_s34 "bmp/s34_1bpp.bmp" "bmp/s34_2bpp.bmp" "bmp/s34_4bpp.bmp"
+bitmapfamily id Tile_s35 "bmp/s35_1bpp.bmp" "bmp/s35_2bpp.bmp" "bmp/s35_4bpp.bmp"
+
+bitmapfamily id Tile_s41 "bmp/s41_1bpp.bmp"
+bitmapfamily id Tile_s42 "bmp/s42_1bpp.bmp" "bmp/s42_2bpp.bmp" "bmp/s42_4bpp.bmp"
+bitmapfamily id Tile_s43 "bmp/s43_1bpp.bmp" "bmp/s43_2bpp.bmp" "bmp/s43_4bpp.bmp"
+bitmapfamily id Tile_s44 "bmp/s44_1bpp.bmp" "bmp/s44_2bpp.bmp" "bmp/s44_4bpp.bmp"
+bitmapfamily id Tile_s45 "bmp/s45_1bpp.bmp" "bmp/s45_2bpp.bmp" "bmp/s45_4bpp.bmp"
+
+bitmapfamily id Tile_s51 "" "bmp/s71_2bpp.bmp"
+bitmapfamily id Tile_s52 "" "bmp/s72_2bpp.bmp"
+bitmapfamily id Tile_s53 "" "bmp/s73_2bpp.bmp"
+bitmapfamily id Tile_s54 "" "bmp/s74_2bpp.bmp"
+bitmapfamily id Tile_s55 "" "bmp/s75_2bpp.bmp"
+
+bitmapfamily id Tile_s61 "" "bmp/s81_2bpp.bmp"
+bitmapfamily id Tile_s62 "" "bmp/s82_2bpp.bmp"
+bitmapfamily id Tile_s63 "" "bmp/s83_2bpp.bmp"
+bitmapfamily id Tile_s64 "" "bmp/s84_2bpp.bmp"
+bitmapfamily id Tile_s65 "" "bmp/s85_2bpp.bmp"
+
+bitmapfamily id Tile_s71 "" "bmp/s91_2bpp.bmp"
+bitmapfamily id Tile_s72 "" "bmp/s92_2bpp.bmp"
+bitmapfamily id Tile_s73 "" "bmp/s93_2bpp.bmp"
+bitmapfamily id Tile_s74 "" "bmp/s94_2bpp.bmp"
+bitmapfamily id Tile_s75 "" "bmp/s95_2bpp.bmp"
+
+bitmapfamily id Tile_s81 "" "bmp/s10_1_2bpp.bmp"
+bitmapfamily id Tile_s82 "" "bmp/s10_2_2bpp.bmp"
+bitmapfamily id Tile_s83 "" "bmp/s10_3_2bpp.bmp"
+bitmapfamily id Tile_s84 "" "bmp/s10_4_2bpp.bmp"
+bitmapfamily id Tile_s85 "" "bmp/s10_5_2bpp.bmp"
+
+bitmapfamily id Background_Tile "bmp/bg_1bpp.bmp" "bmp/bg_2bpp.bmp" "bmp/bg_4bpp.bmp"
+
+bitmapfamily id Left_Of      "bmp/left_of.bmp"     "bmp/left_of_2bpp.bmp"     "bmp/left_of_4bpp.bmp"
+bitmapfamily id Same_Column  "bmp/same_column.bmp" "bmp/same_column_2bpp.bmp" "bmp/same_column_4bpp.bmp"
+
+bitmapfamily id Hercule_Logo_Bmp "bmp/logo.bmp" "" "bmp/logo_4bpp.bmp" compress
+
+icon "hercule.pbitm"
+

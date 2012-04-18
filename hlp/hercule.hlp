@@ -1,0 +1,18 @@
+Hercule is a logic game in which you must correctly deduce the locations of all tiles on the game board based on a set of clues.
+
+To assert that a given tile is at a given location, make sure you are in "assert mode" (the exclamation icon in the lower right is selected) and then click the tile.  It will expand to fill that square, and all other icons in the square will be removed.  If "auto assert" is enabled, all other instances of that tile will be removed from that row.
+
+To assert that a given tile is NOT at a given location, make sure you are in "eliminate mode" (the icon of a circle with a line through it in the lower right) and then click the tile.  That tile will be removed.  To replace a tile that you have removed, click the gray area where the tile used to be and the tile will be restored.
+
+For quicker play, you can hold down the 'page-down' button when you tap.  This will make the tap do the opposite of the current mode; i.e., if you are in eliminate mode, holding down the page-down button when you tap will cause the tapped tile to be asserted.
+
+You may hide clues that no longer have use by clicking on the clue.  A hidden clue may be made visible by
+clicking on it again.  You may also reorder clues by dragging and dropping a clue onto another one -- the two clues will trade places.
+
+If you make a mistake, you may undo up to the last 15 moves you made by clicking the "undo" icon in the lower right (the circular arrow).  A puzzle may also be reset to it's original state by clicking the "reset" icon in the lower right (the arrow-and-bar icon).
+
+If you get stuck, you can ask for a hint by clicking the question mark icon in the lower right.  The tile to assert or eliminate will flash along with the clue that led to that deduction until you tap the screen with the stylus.  Note that the number of hints you ask for are counted, and at the end of the game you will be shown how many times you needed help!
+
+Exiting Hercule in the middle of a game will save the game, so you can come back to it later.
+
+Once you have correctly deduced the location of all 20 tiles on the board, a form will pop up showing you how many times you were warned about a bad assumption, how many times you used the "undo" feature, how many times you asked for a hint, and how long it took to finish the puzzle.  If you have "auto advance" turned on, the next puzzle will automatically be generated when you close that form.

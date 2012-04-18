@@ -1,0 +1,15 @@
+This form displays the most recent high scores logged by Hercule.
+
+The '#' column is the ranking of that entry.
+
+The 'Time' column shows the time (in minutes and seconds) that it took to complete that puzzle.
+
+The 'Puzzle' column is the number of the puzzle.
+
+The 'H' column is the handicap that was used for that puzzle.
+
+The '?' column shows how many hints were given for that puzzle.
+
+The 'W' column shows how many warnings were given for that puzzle.
+
+The 'Name' column shows the initials of the player who finished that puzzle.

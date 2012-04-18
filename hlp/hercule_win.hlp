@@ -1,0 +1,11 @@
+This form displays the statistics for the game you just finished.
+
+"Warnings" is how many times you were warned about making an incorrect assumption.  If "Warn about bad assumptions" is turned off in the preferences dialog, then this will always be 0.
+
+"Undos" is how many times you clicked the "undo" icon in the lower right to fix a mistake that you made.
+
+"Hints" is how many times you asked for a hint during the game.
+
+"Time" is how long it took you to finish the puzzle, in minutes and seconds.
+
+"Avg Time" is the average time you have taken to solve the puzzles.

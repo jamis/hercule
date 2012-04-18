@@ -1,0 +1,5 @@
+From this screen you can specify whether you want the clues to be automatically sorted when a new puzzle is generated.  If 'Auto Sort' is unchecked, clues will be given in random order.
+
+If 'Auto Sort' is checked, clues will be sorted according to the following four pop-up lists.  The 'First' one specifies what type of clue will be listed first, followed by the 'Second' type of clue, etc.
+
+Even if Auto Sort is unchecked, you may still sort clues by opening this form during a puzzle and tapping the 'Sort' button.  (The 'sort' button is not visible when a puzzle is not in progress.)

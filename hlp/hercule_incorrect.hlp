@@ -1,0 +1,11 @@
+This is what comes of playing the game with the "warn on bad assumptions" preference unchecked.  Somewhere, you made a wrong assumption and didn't catch it, and now you've reached the end of the game with a wrong tile asserted somewhere.
+
+You can either:
+
+· click "undo" to back up (but you can only go back 15 moves that way)
+
+· click "reset" to restart the current puzzle
+
+· click on a solved square to reset that square back to all possibilities.
+
+Good luck!

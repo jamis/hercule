@@ -1,0 +1,5 @@
+This form lets you generate a new puzzle.
+
+The "puzzle" number is any valid number between 0 and 99,999 (the shareware version only allows puzzles from 0 to 9).  Each number is a unique puzzle.  Simply select the number of the puzzle you want to play.  You may input the number via the Graffiti pad, or by pressing the arrow buttons to the left or right of the input field.
+
+The "handicap" is the number of squares to be "given away" at the beginning of the puzzle.  A handicap of 0 means that none of the squares are solved initially, while a 1 means that there is exactly one square solved.  You may choose any handicap, up to 9.  Higher handicaps result in easier puzzles, so if you are just learning the game, you may want to make use of a handicap of 1 or more.

@@ -1,0 +1,416 @@
+#include "herculeRsc.h"
+
+form id HerculeMain at (0 0 160 160)
+noframe
+savebehind
+menuid HerculeMainMenu
+begin
+  pushbutton "" id Assert_CmdBar_Icon at ( 148 148 11 11 ) group 1 graphical bitmapid Assert_CmdBar_Icon nonusable noframe
+  pushbutton "" id Eliminate_CmdBar_Icon at ( prevleft-12 prevtop 11 11 ) group 1 graphical bitmapid Eliminate_CmdBar_Icon nonusable noframe
+  button "" id Hercule_Cmd_Undo at ( prevleft-14 prevtop 11 11 ) graphical bitmapid Undo_CmdBar_Icon noframe nonusable
+  button "" id Hercule_Cmd_Hint at ( prevleft-11 prevtop 11 11 ) graphical bitmapid Hint_CmdBar_Icon noframe nonusable
+  button "" id Hercule_Cmd_Reset at ( prevleft-11 prevtop 11 11 ) graphical bitmapid Reset_CmdBar_Icon noframe nonusable
+  button "" id Hercule_Cmd_Swap at ( prevleft-11 prevtop 11 11 ) graphical bitmapid Swap_CmdBar_Icon noframe nonusable
+end
+
+form id HerculeNew at ( 30 30 100 70 )
+usable
+savebehind
+modal
+helpid Hercule_Help_New
+begin
+  title "New Puzzle"
+
+  label "Puzzle:" autoid at ( 5 18 )
+
+  repeatbutton "" id Icon_Left at ( prevright+4 prevtop+1 6 10 ) noframe graphical bitmapid Icon_Left 
+  field id Game_Number at ( prevright+2 prevtop 25 15 ) numeric maxchars 5 rightalign underlined
+  repeatbutton "" id Icon_Right at ( prevright+2 prevtop 6 10 ) noframe graphical bitmapid Icon_Right 
+
+  label "Handicap:" autoid at ( 5 prevbottom+5 )
+  popuptrigger "" id Handicap_Trigger at ( prevright+2 prevtop 12 auto ) leftanchor
+  list "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" id Handicap_List at ( prevright prevtop 15 1 ) visibleitems 5 nonusable
+  popuplist id Handicap_Trigger Handicap_List 
+
+  button "Create!" id Puzzle_Create at ( 8 50 40 auto )
+  button "Cancel"  id Puzzle_Cancel at ( prevright+2 prevtop 40 auto )
+end
+
+form id HerculeAbout at ( 30 15 100 130 )
+frame
+savebehind
+modal
+usable
+begin
+  title "About Hercule"
+  label "Hercule" autoid at ( center 18 ) font 1
+  label "version 1.33" autoid at ( center prevbottom ) font 0
+  label "by Jamis Buck" autoid at ( center prevbottom+4 ) font 0
+  label "(jgb3@email.byu.edu)" autoid at ( center prevbottom ) font 0
+  label "Hippa-Potta" autoid at ( center prevbottom+4 ) font 1
+  label "Software" autoid at ( center prevbottom ) font 1
+  button "OK" id Btn_OK at ( center prevbottom+8 32 auto )
+end
+
+form id HerculePrefs at ( 10 10 140 125 )
+frame
+savebehind
+modal
+usable
+helpid Hercule_Help_Prefs
+begin
+  title "Preferences"
+  checkbox "Auto Deduce" id HerculePrefs_AutoDeduce at ( 5 18 auto auto )
+  checkbox "Auto Advance" id HerculePrefs_AutoAdvance at ( prevleft prevbottom+2 auto auto )
+  checkbox "Warn on Bad Assumptions" id HerculePrefs_WarnBad at ( prevleft prevbottom+2 auto auto )
+  checkbox "Show Time" id HerculePrefs_ShowTime at ( prevleft prevbottom+2 auto auto )
+  checkbox "Read Clues Left-to-Right" id HerculePrefs_ReadOrderLtR at ( prevleft prevbottom+2 auto auto )
+  label "Colors:" autoid at ( 5 prevbottom+2 )
+  popuptrigger "" id HerculePrefs_ColorTrigger at ( prevright+2 prevtop 12 auto ) leftanchor
+  list "Black & White" "4-Level Grey" "16-Level Grey" id HerculePrefs_ColorList at ( prevright prevtop 80 1 ) visibleitems 3 nonusable
+  popuplist id HerculePrefs_ColorTrigger HerculePrefs_ColorList 
+
+  button "OK" id Btn_OK at ( 34 108 30 auto )
+  button "Cancel" id Btn_Cancel at ( prevright+4 prevtop 30 auto )
+end
+
+form id HerculeWin at ( 30 15 100 140 )
+frame
+savebehind
+modal
+usable
+helpid Hercule_Help_Win
+begin
+  title "Correct!"
+  label "You got it!" autoid at ( center 18 ) font 1
+  label "Game Statistics:" autoid at ( 5 prevbottom+5 )
+
+  label "Warnings:" autoid at ( 10 prevbottom+5 )
+  field id HerculeWin_Warnings at ( 60 prevtop 30 auto ) rightalign noneditable
+  label "Undos:"    autoid at ( 10 prevbottom )
+  field id HerculeWin_Undos at ( 60 prevtop 30 auto ) rightalign noneditable
+  label "Hints:"    autoid at ( 10 prevbottom )
+  field id HerculeWin_Hints at ( 60 prevtop 30 auto ) rightalign noneditable
+  label "Time:"     autoid at ( 10 prevbottom )
+  field id HerculeWin_Time at ( 60 prevtop 30 auto ) rightalign noneditable
+  label "Avg Time:"  autoid at ( 10 prevbottom )
+  field id HerculeWin_Average at ( 60 prevtop 30 auto ) rightalign noneditable
+
+  button "OK" id Btn_OK at ( center prevbottom+10 40 auto )
+end
+
+form id HerculeTutorial at ( 0 0 160 160 )
+noframe
+savebehind
+modal
+usable
+begin
+  title "Hercule: Tutorial"
+
+  button "<-" id Btn_Previous at ( 31 bottom@159 30 auto )
+  button "Done" id Btn_OK at ( prevright+2 prevtop 30 auto )
+  button "->" id Btn_Next at ( prevright+2 prevtop 30 auto )
+  button "" id Btn_Down at ( prevright+4 153 11 6 ) noframe nonusable graphical bitmapid Icon_Down 
+  button "" id Btn_Up at ( prevleft 145 11 6 ) noframe nonusable graphical bitmapid Icon_Up 
+end
+
+form id HerculeHighScores at ( 0 0 160 160 )
+noframe
+savebehind
+modal
+usable
+helpid Hercule_Help_HighScores
+begin
+  title "Hercule: High Scores"
+
+  label "#" autoid at ( 6 13 )
+  label "Time" autoid at ( 26 13 )
+  label "Puzzle" autoid at ( 58 13 )
+  label "H" autoid at ( 89 13 )
+  label "?" autoid at ( 104 13 )
+  label "W" autoid at ( 117 13 )
+  label "Name" autoid at ( 129 13 )
+
+  list "" id HerculeHighScore_List at ( 2 26 156 111 )
+  button "OK" id Btn_OK at ( 18 bottom@155 60 auto )
+  button "Reset Scores" id Btn_Reset at ( prevright+2 prevtop prevwidth prevheight )
+end
+
+form id HerculeGetInitials at ( 2 30 156 100 )
+frame
+savebehind
+modal
+usable
+helpid Hercule_Help_GetInitials
+begin
+  title "High Score!"
+
+  label "You earned a place in the high score" autoid at ( 4 18 )
+  label "list!  Please enter your initials:" autoid at ( 4 32 )
+
+  field id HerculeInitials at ( 66 50 15 15 ) maxchars 3 underlined
+
+  button "OK" id Btn_OK at ( 34 75 40 auto )
+  button "Cancel" id Btn_Cancel at ( prevright+2 prevtop prevwidth prevheight )
+end
+
+form id HerculeAverageScore at ( 10 35 140 90 )
+frame
+savebehind
+modal
+usable
+helpid Hercule_Help_AverageScore
+begin
+  title "Average Time"
+
+  label "Total Games Played:" autoid at ( 5 18 )
+  field id Hercule_Avg_GamesPlayed at ( 100 prevtop 30 auto ) noneditable
+  label "Total Time Played:" autoid at ( 5 prevbottom )
+  field id Hercule_Avg_TotalTime   at ( 100 prevtop 30 auto ) noneditable
+  label "Average Time/Game:" autoid at ( 5 prevbottom )
+  field id Hercule_Avg_AverageTime at ( 100 prevtop 30 auto ) noneditable
+
+  button "OK" id Btn_OK at ( 34 prevbottom+10 40 auto )
+  button "Reset" id Hercule_Avg_ResetBtn at ( prevright+2 prevtop prevwidth prevheight )
+end
+
+
+form id HerculeSortDlg at ( 10 20 140 110 )
+frame
+savebehind
+modal
+usable
+helpid Hercule_Help_Sort
+begin
+  title "Clue Sorting"
+
+  checkbox "Auto Sort Clues" id HerculePrefs_AutoSort at ( 5 18 auto auto )
+
+  label "First:"  autoid at ( 18 32 )
+  label "Second:" autoid at ( 18 44 )
+  label "Third:"  autoid at ( 18 56 )
+  label "Fourth:" autoid at ( 18 68 )
+
+  popuptrigger "" id HerculePrefs_SortFirstTrigger at ( 50 32 12 auto ) leftanchor
+  list "Left Of" "Next To" "Between" "Same Column" id HerculePrefs_SortFirstList at ( prevright prevtop 80 1 ) visibleitems 4 nonusable
+  popuplist id HerculePrefs_SortFirstTrigger HerculePrefs_SortFirstList
+
+  popuptrigger "" id HerculePrefs_SortSecondTrigger at ( 50 44 12 auto ) leftanchor
+  list "Left Of" "Next To" "Between" "Same Column" id HerculePrefs_SortSecondList at ( prevright prevtop 80 1 ) visibleitems 4 nonusable
+  popuplist id HerculePrefs_SortSecondTrigger HerculePrefs_SortSecondList
+
+  popuptrigger "" id HerculePrefs_SortThirdTrigger at ( 50 56 12 auto ) leftanchor
+  list "Left Of" "Next To" "Between" "Same Column" id HerculePrefs_SortThirdList at ( prevright prevtop 80 1 ) visibleitems 4 nonusable
+  popuplist id HerculePrefs_SortThirdTrigger HerculePrefs_SortThirdList
+
+  popuptrigger "" id HerculePrefs_SortFourthTrigger at ( 50 68 12 auto ) leftanchor
+  list "Left Of" "Next To" "Between" "Same Column" id HerculePrefs_SortFourthList at ( prevright prevtop 80 1 ) visibleitems 4 nonusable
+  popuplist id HerculePrefs_SortFourthTrigger HerculePrefs_SortFourthList
+
+  button "Save"    id Btn_OK at ( 10 90 38 auto )
+  button "Sort"    id Btn_Sort at ( prevright+2 prevtop prevwidth prevheight )
+  button "Cancel"  id Btn_Cancel at ( prevright+2 prevtop prevwidth prevheight )
+end
+
+form id HerculeTileSets at ( 10 20 140 110 )
+frame
+savebehind
+modal
+usable
+helpid Hercule_Help_Tiles
+begin
+  title "Tile Sets"
+
+  checkbox "Auto Jumble Rows" id HerculePrefs_RandomizeRows at ( 5 18 auto auto )
+
+  label "Row #1:" autoid at ( 18 32 )
+  label "Row #2:" autoid at ( 18 45 )
+  label "Row #3:" autoid at ( 18 58 )
+  label "Row #4:" autoid at ( 18 71 )
+
+  popuptrigger "" id HerculePrefs_Row1Trigger at ( 50 32 12 auto ) leftanchor
+  list "" id HerculePrefs_Row1List at ( prevright prevtop 80 1 ) visibleitems 1 nonusable
+  popuplist id HerculePrefs_Row1Trigger HerculePrefs_Row1List
+
+  popuptrigger "" id HerculePrefs_Row2Trigger at ( 50 45 12 auto ) leftanchor
+  list "" id HerculePrefs_Row2List at ( prevright prevtop 80 1 ) visibleitems 1 nonusable
+  popuplist id HerculePrefs_Row2Trigger HerculePrefs_Row2List
+
+  popuptrigger "" id HerculePrefs_Row3Trigger at ( 50 58 12 auto ) leftanchor
+  list "" id HerculePrefs_Row3List at ( prevright prevtop 80 1 ) visibleitems 1 nonusable
+  popuplist id HerculePrefs_Row3Trigger HerculePrefs_Row3List
+
+  popuptrigger "" id HerculePrefs_Row4Trigger at ( 50 71 12 auto ) leftanchor
+  list "" id HerculePrefs_Row4List at ( prevright prevtop 80 1 ) visibleitems 1 nonusable
+  popuplist id HerculePrefs_Row4Trigger HerculePrefs_Row4List
+
+  button "OK"     id Btn_OK at ( right@70 92 38 auto )
+  button "Cancel" id Btn_Cancel at ( prevright+2 prevtop prevwidth prevheight )
+end
+
+
+alert id RomIncompatibleAlert
+error
+begin
+  title "System Incompatible"
+  message "System Version 2.0 or greater is required to run this application"
+  buttons "OK"
+end
+
+alert id Alert_herculeDebug
+information
+begin
+  title "Debug"
+  message "^1"
+  buttons "OK"
+end
+
+alert id Alert_herculeWarn
+information
+helpid Hercule_Help_Warn
+begin
+  title "Wait a minute..."
+  message "Slow down there, tiger.  I wouldn't do that if I were you..."
+  buttons "OK"
+end
+
+alert id Alert_herculeIncorrect
+information
+helpid Hercule_Help_Incorrect
+begin
+  title "Nice Try..."
+  message "It was a valiant effort, but somewhere you made a wrong assumption, Sherlock."
+  buttons "OK"
+end
+
+alert id Alert_herculeReset
+confirmation
+defaultbutton 1
+begin
+  title "Confirmation"
+  message "Are you sure you want to restart the current puzzle?"
+  buttons "Yes" "No"
+end
+
+alert id Alert_herculeEndPuzzle
+confirmation
+defaultbutton 1
+begin
+  title "Confirmation"
+  message "Are you sure you want to end the current puzzle?"
+  buttons "Yes" "No"
+end
+
+alert id Alert_herculeDeleteScores
+confirmation
+defaultbutton 1
+begin
+  title "Confirmation"
+  message "Are you sure you want to erase these scores?"
+  buttons "Yes" "No"
+end
+
+alert id Alert_herculeResetAverage
+confirmation
+defaultbutton 1
+begin
+  title "Confirmation"
+  message "Are you sure you want to reset the number of games played?"
+  buttons "Yes" "No"
+end
+
+smallicon "hercule_s.pbitm"
+
+applicationiconname id 100 "Hercule"
+
+version id 1 "1.33"
+
+bitmap id Icon_Left  "bmp/left.bmp"
+bitmap id Icon_Right "bmp/right.bmp"
+bitmap id Icon_Up    "bmp/up.bmp"
+bitmap id Icon_Down  "bmp/down.bmp"
+
+bitmap id Eliminate_CmdBar_Icon "bmp/eliminate.bmp"
+bitmap id Assert_CmdBar_Icon    "bmp/assert.bmp"
+bitmap id Undo_CmdBar_Icon      "bmp/undo.bmp"
+bitmap id Hint_CmdBar_Icon      "bmp/hint.bmp"
+bitmap id Reset_CmdBar_Icon     "bmp/reset.bmp"
+bitmap id Swap_CmdBar_Icon      "bmp/clueswap.bmp"
+
+string id Hercule_Help_New          file "hlp/hercule_new.hlp"
+string id Hercule_Help_Prefs        file "hlp/hercule_pref.hlp"
+string id Hercule_Help_HowToPlay    file "hlp/hercule.hlp"
+string id Hercule_Help_Win          file "hlp/hercule_win.hlp"
+string id Hercule_Help_Warn         file "hlp/hercule_warn.hlp"
+string id Hercule_Help_Incorrect    file "hlp/hercule_incorrect.hlp"
+string id Hercule_Help_HighScores   file "hlp/hercule_scores.hlp"
+string id Hercule_Help_GetInitials  file "hlp/hercule_initials.hlp"
+string id Hercule_Help_Sort         file "hlp/hercule_sort.hlp"
+string id Hercule_Help_Tiles        file "hlp/hercule_tiles.hlp"
+string id Hercule_Help_AverageScore file "hlp/hercule_avgscore.hlp"
+
+string id Hercule_Tut01_Para01   "The Hercule game board consists of 5 columns and 4 rows.  Each " \
+                                 "row contains 5 tiles that only appear in that row.  The object " \
+                                 "of the game is to locate each of the 20 tiles.  The 20 tiles " \
+                                 "(by row) are:"
+
+string id Hercule_Tut02_Para01   "To help you deduce the locations of the tiles, you are given several " \
+                                 "clues.  There are four different types of clues:"
+
+string id Hercule_Tut03_Para01   "The 'Left-Of' clue tells you that the first tile is somewhere to the " \
+                                 "left of the second tile.  From this, you can deduce that: " \
+                                 "(1) the left tile cannot exist in the right-most column, " \
+                                 "(2) the right tile cannot exist in the left-most column, " \
+                                 "(3) the left tile must exist to the left of the left-most instance of " \
+                                     "the right tile, and " \
+                                 "(4) the right tile must exist to the right of the right-most instance " \
+                                     "of the left tile."
+
+string id Hercule_Tut04_Para01   "The 'Between' clue tells you that the middle tile is adjacent to the " \
+                                 "first tile on one side, and the third tile on the other side, but it " \
+                                 "does not tell you the order of the tiles.  For instance, the first tile " \
+                                 "may be either to the right or the left of the middle tile.  From this " \
+                                 "clue you can deduce that: " \
+                                 "(1) the middle tile cannot exist in the right-most or left-most columns, " \
+                                 "(2) the left and right tiles must have exactly one column between them, " \
+                                     "and " \
+                                 "(3) any instance of the middle tile must be adjacent to the first tile " \
+                                     "on one side and the third tile on the other."
+
+string id Hercule_Tut05_Para01   "The 'Next-To' clue looks much like 'Between', and care should be taken " \
+                                 "not to confuse the two.  The difference between the Next-To and Between " \
+                                 "clues is that the first and third tiles are the same for Next-To.  This " \
+                                 "clue means that the middle tile is adjacent (either on the left or the " \
+                                 "right) to the first/third tile.  From this clue you can deduce that: " \
+                                 "(1) if either tile is not bordered by an instance of the other, then " \
+                                     "the tile can be eliminated from that position, and " \
+                                 "(2) if either tile is found to exist somewhere, the other must exist to " \
+                                     "one side of it."
+
+string id Hercule_Tut06_Para01   "The 'Same-Column' clue tells you that the first tile can be found in " \
+                                 "the same column as the second.  Thus, if you find one tile, you can deduce " \
+                                 "the location of the other because it will be in the same column. " \
+                                 "Likewise, if you find that one of the tiles does not exist somewhere, you " \
+                                 "can deduce that the other does not exist in that column, either."
+
+string id Hercule_Tut07_Para01   "There are a few features you can use to keep track of clues.  You can hide " \
+                                 "clues that are no longer useful by tapping them with the stylus.  If you " \
+                                 "later decide that you need to see that clue again, simply tap the box " \
+                                 "again to redisplay it.  You can also move clues around by dragging one " \
+                                 "clue onto another, causing them to trade places.  This is useful in " \
+                                 "organizing clues by similar tiles, which some people find helpful. " \
+                                 "Additionally, you can specify a sort-order for clues via the " \
+                                 "'Clue Sorting' menu option, and you can even specify that the sorting " \
+                                 "should be done automatically every time a new puzzle is generated."
+
+string id Hercule_Tut08_Para01   "Perhaps the easiest way to learn Hercule is by playing it.  You may find " \
+                                 "it helpful to set the 'handicap' to 1 or more, to start the game with " \
+                                 "some of the tiles already uncovered.  Also, the 'hint' feature may be " \
+                                 "helpful -- simply tap the question mark icon in the lower right and " \
+                                 "a tile and it's clue will blink.  Try to figure out how that clue could " \
+                                 "indicate that the tile should be eliminated (or asserted, as the case " \
+                                 "may be).  One last, helpful feature:  you can hold down the 'page-down' " \
+                                 "key to quickly perform the opposite of the current mode.  That is to say, " \
+                                 "if you are in 'eliminate' mode, then when you hold down 'page-down' and " \
+                                 "tap a tile, the tile will be asserted!"
+

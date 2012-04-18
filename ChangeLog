@@ -1,0 +1,118 @@
+v1.33 (10 Oct 2003)
+  - If total seconds played exceeded 64k, it would reset to 0.  The total
+    number of seconds should now be sufficient to represent a over 134 years
+    of game time.
+
+v1.32 (30 Oct 2002)
+  - Added games played and average game time statistics, with corresponding
+    window for viewing and resetting those stats.
+  - Added a "clue swap" feature for toggling the hidden state of each clue.
+  - Fixed potential crash when the "New Puzzle" window is closed by pressing
+    the "Cancel" button.
+
+v1.31 (2 May 2002)
+  - no changes made from 1.31-pre1
+
+v1.31-pre1 (25 Apr 2002 -- limited release)
+  - fixed bug where tapping 'home' on the win dialog would result in the
+    puzzle number not being incremented.
+  - upgraded prc-tools, in the hope that this will fix Todd Redden's problems
+    with running Hercule in flash.
+
+v1.3 (15 Apr 2002)
+  - fixed a few minor potential memory leaks (frmCloseEvent is not called
+    on FrmReturnToForm).
+  - fixed bug when clicking below the clues when clues are displayed
+    vertically -- a clue that was not clicked recieved the event.
+  - Puzzle number was not incremented (or incremented twice) in certain
+    situations.
+  - fixed bug causing vertically listed clues to be listed in too many
+    rows.
+  - removed redundant background tiles from color version.
+  - Changed 'Next'/'OK' buttons on Win dialog to just 'OK'.  If auto-advance
+    is on, clicking 'OK' will automatically take you to the next puzzle.  If
+    auto-advance is off, clicking OK will return you to the puzzle you just
+    finished.
+  - Added arrow, punctuation, and music notation tilesets.
+
+v1.3-pre4 (12 Apr 2002)
+  - Put shapes tiles back (removed fruits/veggies tiles)
+  - Replaced number tiles with colors.
+  - Touched up letter and die tiles.
+  - Added documentation to tutorial.
+  - Changed 'OK'/'Cancel' buttons on Win dialog to 'Next'/'OK'.
+  - Added option to select tiles used for each row.
+  - Added Greek tileset (thanks to Eric Shen for the idea).
+
+v1.3-pre3 (8 Apr 2002)
+  - If a puzzle was finished, 'cancel' pressed, and then the game exited,
+    the next time Hercule was started, the puzzle presented to the user
+    by default was the one they had just finished.  The seed is now
+    incremented to account for this when the game is exited while viewing
+    a finished game.
+  - Replaced 'shapes' tiles with 'fruits/vegetables' tiles from Sean Evans.
+  - Added countdown timer on game screen (show/hide via the preferences).
+  - Custom clue sort orders.
+  - Changed the 4bpp logo screen (again).
+  - Clues disappearing automatically on puzzle start has been fixed.
+  - Customizable clue read-order specification (left-to-right or
+    top-to-bottom) via preferences.
+
+v1.3-pre2 (3 Apr 2002)
+  - Fixed color-depth calculation -- it now chooses the lowest color
+    resolution consistent with the device, but at least 8-bpp.
+  - Made the 'page-down' key not send any events, so that the system
+    tick does not go off when you hold it down.
+  - Added 'cancel' button on win dialog, to allow you to return to the
+    game board to view the solution.  Tapping after a win does not
+    do anything.
+  - Added 'Next Puzzle' to menu, to allow you to move to the next
+    puzzle number quickly.
+
+v1.3-pre (2 Apr 2002):
+  - Color!
+  - Puzzle number & handicap now show in the bottom left of the puzzle
+    screen.
+  - Added new 4bpp logo screen.
+
+v1.22 (29 Mar 2002):
+  - sort clues so that vertical clues sort after horizontal clues
+  - time no longer keeps ticking when device is turned off
+  - holding down page-down while tapping performs the inverse of the
+    currently selected operation.
+
+v1.21 (19 Mar 2002):
+  - fixed bug where program crashed if 10 high-scores were achieved.
+  - made high-scores dialog pop up if a high-score was achieved.
+  - made high-score list taller to accommodate all 10 high scores.
+
+v1.2 (17 Mar 2002):
+  - added high score tracking
+  - abandoned the Pref* API because it seemed to lose the preferences under
+    certain situations -- returned to creating a "herculeDB" database.
+  - autodetects highest screen-depth when first run, instead of defaulting
+    to 1-bit graphics
+
+v1.11a (11 Mar 2002):
+  - added small-icon for display in listview of application launcher
+
+v1.11 (7 Mar 2002):
+  - fixed three minor bugs that cropped up occassionally:
+    1) replacing a removed tile was not being added to the undo history
+    2) auto-deduce was not working correctly in one particular instance
+    3) clicking the right-edge of the third small tile in a square would
+       selected the fourth small tile.
+
+v1.1 (7 Mar 2002):
+  - rewrote display routines to improve compatibility with older versions of
+    PalmOS and to improve display efficiency.
+  - Fixed some small bugs in the puzzle engine.
+  - Added support for 4- and 16-level greyscale on devices that allow it.
+  - Added logo screen
+  - Added "End Puzzle" option.
+  - When reordering clues, dragging a clue actually shows the clue being
+    dragged.
+
+v1.0 (3 Mar 2002):
+  - initial release
+

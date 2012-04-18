@@ -1,0 +1,57 @@
+menu id HerculeMainMenu
+begin
+  pulldown "Game"
+  begin
+    menuitem "New Puzzle" HerculeMainMenu_New "N"
+    menuitem separator
+    menuitem "High Scores" Hercule_Cmd_Scores
+    menuitem "Average Time" Hercule_Cmd_Average
+    menuitem separator
+    menuitem "Preferences" HerculeMainMenu_Prefs "P"
+    menuitem "Clue Sorting" HerculeMainMenu_Sort "S"
+    menuitem "Tile Sets" HerculeMainMenu_TileSets "T"
+  end
+  pulldown "Help"
+  begin
+    menuitem "How to Play" id HerculeMainMenu_Help "?"
+    menuitem "Tutorial" id HerculeMainMenu_Tutorial
+    menuitem "About" id HerculeMainMenu_About
+  end
+end
+
+menu id HerculeMainMenu_InGame
+begin
+  pulldown "Game"
+  begin
+    menuitem "New Puzzle" HerculeMainMenu_New "N"
+    menuitem "Next Puzzle" HerculeMainMenu_NextPuzzle
+    menuitem "End Puzzle" HerculeMainMenu_EndPuzzle
+    menuitem separator
+    menuitem "High Scores" Hercule_Cmd_Scores
+    menuitem "Average Time" Hercule_Cmd_Average
+    menuitem separator
+    menuitem "Preferences" HerculeMainMenu_Prefs "P"
+    menuitem "Clue Sorting" HerculeMainMenu_Sort "S"
+    menuitem "Tile Sets" HerculeMainMenu_TileSets "T"
+  end
+  pulldown "Puzzle"
+  begin
+    menuitem "Assert Mode" Assert_CmdBar_Icon "A"
+    menuitem "Eliminate Mode" Eliminate_CmdBar_Icon "E"
+    menuitem separator
+    menuitem "Undo" Hercule_Cmd_Undo "Z"
+    menuitem "Hint" Hercule_Cmd_Hint "H"
+    menuitem "Swap Clues" Hercule_Cmd_Swap "W"
+    menuitem separator
+    menuitem "Reset" Hercule_Cmd_Reset "R"
+  end
+  pulldown "Help"
+  begin
+    menuitem "How to Play" id HerculeMainMenu_Help "?"
+    menuitem "Tutorial" id HerculeMainMenu_Tutorial
+    menuitem "About" id HerculeMainMenu_About
+  end
+end
+
+
+

@@ -1,0 +1,3 @@
+From this form you can change which tiles are used for each row of the game.  You cannot use the same tileset for more than one row (the game would be impossible to play, if that were allowed!).
+
+If "Auto Jumble Rows" is checked, then every time a new puzzle is generated, the order of the tiles you chose is randomized, so that each row will be different from game to game.  Note that this adds to the complexity of the game, and is not recommended for beginners!

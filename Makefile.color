@@ -1,0 +1,39 @@
+include make.inc
+
+#CFLAGS = -O2 -Wall -Wno-unknown-pragmas `palm-config --cflags` -DCOLOR
+CFLAGS = -O2 -Wall -Wno-unknown-pragmas -palmos5.0 -DCOLOR
+#CFLAGS = -O2 -Wall -Wno-unknown-pragmas -palmos4.0 -DCOLOR
+
+reg: reg/.intermediate_c resources_reg_color
+	build-prc -o hercule_c.prc hercule.def reg/.intermediate_c *.bin
+	rm *.bin
+
+unreg: unreg/.intermediate_c resources_unreg_color
+	build-prc -o hercule_c_unreg.prc hercule.def unreg/.intermediate_c *.bin
+	rm *.bin
+
+reg/.intermediate_c: reg/hercule_c.o $(GENERAL_OBJS) hercule-sections.ld
+	$(CC) $(CFLAGS) -o reg/.intermediate_c reg/hercule_c.o $(GENERAL_OBJS) hercule-sections.ld
+
+unreg/.intermediate_c: unreg/hercule_c.o $(GENERAL_OBJS) hercule-sections.ld
+	$(CC) $(CFLAGS) -o unreg/.intermediate_c unreg/hercule_c.o $(GENERAL_OBJS) hercule-sections.ld
+
+
+reg/hercule_c.o: hercule.c herculeRsc.h hercule_engine_palm.h progress_dlg.h scoredb.h
+	$(CC) $(CFLAGS) -c -o reg/hercule_c.o -DREGISTERED hercule.c
+
+unreg/hercule_c.o: hercule.c herculeRsc.h hercule_engine_palm.h progress_dlg.h scoredb.h
+	$(CC) $(CFLAGS) -c -o unreg/hercule_c.o -DUNREGISTERED hercule.c
+
+
+resources_reg_color: hercule.rcp hercule_color.rcp hercule_reg.rcp herculeRsc.h
+	cat hercule.rcp hercule_color.rcp hercule_reg.rcp > temp.rcp
+	pilrc -q -I . temp.rcp
+	rm temp.rcp
+
+resources_unreg_color: hercule.rcp hercule_color.rcp hercule_unreg.rcp herculeRsc.h
+	cat hercule.rcp hercule_color.rcp hercule_unreg.rcp > temp.rcp
+	pilrc -q -I . temp.rcp
+	rm temp.rcp
+
+
