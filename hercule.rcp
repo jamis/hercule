@@ -1,16 +1,15 @@
 #include "herculeRsc.h"
 
 form id HerculeMain at (0 0 160 160)
-noframe
 savebehind
 menuid HerculeMainMenu
 begin
-  pushbutton "" id Assert_CmdBar_Icon at ( 148 148 11 11 ) group 1 graphical bitmapid Assert_CmdBar_Icon nonusable noframe
-  pushbutton "" id Eliminate_CmdBar_Icon at ( prevleft-12 prevtop 11 11 ) group 1 graphical bitmapid Eliminate_CmdBar_Icon nonusable noframe
-  button "" id Hercule_Cmd_Undo at ( prevleft-14 prevtop 11 11 ) graphical bitmapid Undo_CmdBar_Icon noframe nonusable
-  button "" id Hercule_Cmd_Hint at ( prevleft-11 prevtop 11 11 ) graphical bitmapid Hint_CmdBar_Icon noframe nonusable
-  button "" id Hercule_Cmd_Reset at ( prevleft-11 prevtop 11 11 ) graphical bitmapid Reset_CmdBar_Icon noframe nonusable
-  button "" id Hercule_Cmd_Swap at ( prevleft-11 prevtop 11 11 ) graphical bitmapid Swap_CmdBar_Icon noframe nonusable
+  pushbutton "" id Assert_CmdBar_Icon at ( 148 148 11 11 ) group 1 graphical bitmapid Assert_CmdBar_Icon nonusable 
+  pushbutton "" id Eliminate_CmdBar_Icon at ( prevleft-12 prevtop 11 11 ) group 1 graphical bitmapid Eliminate_CmdBar_Icon nonusable 
+  button "" id Hercule_Cmd_Undo at ( prevleft-14 prevtop 11 11 ) graphical bitmapid Undo_CmdBar_Icon nonusable
+  button "" id Hercule_Cmd_Hint at ( prevleft-11 prevtop 11 11 ) graphical bitmapid Hint_CmdBar_Icon nonusable
+  button "" id Hercule_Cmd_Reset at ( prevleft-11 prevtop 11 11 ) graphical bitmapid Reset_CmdBar_Icon nonusable
+  button "" id Hercule_Cmd_Swap at ( prevleft-11 prevtop 11 11 ) graphical bitmapid Swap_CmdBar_Icon nonusable
 end
 
 form id HerculeNew at ( 30 30 100 70 )
@@ -23,9 +22,9 @@ begin
 
   label "Puzzle:" autoid at ( 5 18 )
 
-  repeatbutton "" id Icon_Left at ( prevright+4 prevtop+1 6 10 ) noframe graphical bitmapid Icon_Left 
+  repeatbutton "" id Icon_Left at ( prevright+4 prevtop+1 6 10 ) graphical bitmapid Icon_Left 
   field id Game_Number at ( prevright+2 prevtop 25 15 ) numeric maxchars 5 rightalign underlined
-  repeatbutton "" id Icon_Right at ( prevright+2 prevtop 6 10 ) noframe graphical bitmapid Icon_Right 
+  repeatbutton "" id Icon_Right at ( prevright+2 prevtop 6 10 ) graphical bitmapid Icon_Right 
 
   label "Handicap:" autoid at ( 5 prevbottom+5 )
   popuptrigger "" id Handicap_Trigger at ( prevright+2 prevtop 12 auto ) leftanchor
@@ -100,7 +99,6 @@ begin
 end
 
 form id HerculeTutorial at ( 0 0 160 160 )
-noframe
 savebehind
 modal
 usable
@@ -110,12 +108,11 @@ begin
   button "<-" id Btn_Previous at ( 31 bottom@159 30 auto )
   button "Done" id Btn_OK at ( prevright+2 prevtop 30 auto )
   button "->" id Btn_Next at ( prevright+2 prevtop 30 auto )
-  button "" id Btn_Down at ( prevright+4 153 11 6 ) noframe nonusable graphical bitmapid Icon_Down 
-  button "" id Btn_Up at ( prevleft 145 11 6 ) noframe nonusable graphical bitmapid Icon_Up 
+  button "" id Btn_Down at ( prevright+4 153 11 6 ) nonusable graphical bitmapid Icon_Down 
+  button "" id Btn_Up at ( prevleft 145 11 6 ) nonusable graphical bitmapid Icon_Up 
 end
 
 form id HerculeHighScores at ( 0 0 160 160 )
-noframe
 savebehind
 modal
 usable
@@ -325,17 +322,17 @@ applicationiconname id 100 "Hercule"
 
 version id 1 "1.33"
 
-bitmap id Icon_Left  "bmp/left.bmp"
-bitmap id Icon_Right "bmp/right.bmp"
-bitmap id Icon_Up    "bmp/up.bmp"
-bitmap id Icon_Down  "bmp/down.bmp"
+bitmap id Icon_Left  "bmp/left.pbm"
+bitmap id Icon_Right "bmp/right.pbm"
+bitmap id Icon_Up    "bmp/up.pbm"
+bitmap id Icon_Down  "bmp/down.pbm"
 
-bitmap id Eliminate_CmdBar_Icon "bmp/eliminate.bmp"
-bitmap id Assert_CmdBar_Icon    "bmp/assert.bmp"
-bitmap id Undo_CmdBar_Icon      "bmp/undo.bmp"
-bitmap id Hint_CmdBar_Icon      "bmp/hint.bmp"
-bitmap id Reset_CmdBar_Icon     "bmp/reset.bmp"
-bitmap id Swap_CmdBar_Icon      "bmp/clueswap.bmp"
+bitmap id Eliminate_CmdBar_Icon "bmp/eliminate.pbm"
+bitmap id Assert_CmdBar_Icon    "bmp/assert.pbm"
+bitmap id Undo_CmdBar_Icon      "bmp/undo.pbm"
+bitmap id Hint_CmdBar_Icon      "bmp/hint.pbm"
+bitmap id Reset_CmdBar_Icon     "bmp/reset.pbm"
+bitmap id Swap_CmdBar_Icon      "bmp/clueswap.pbm"
 
 string id Hercule_Help_New          file "hlp/hercule_new.hlp"
 string id Hercule_Help_Prefs        file "hlp/hercule_pref.hlp"

@@ -1,7 +1,8 @@
 include make.inc
 
 #CFLAGS = -O2 -Wall -Wno-unknown-pragmas `palm-config --cflags`
-CFLAGS = -O2 -Wall -Wno-unknown-pragmas -palmos5.0
+#CFLAGS = -O2 -Wall -Wno-unknown-pragmas -palmos5.0
+CFLAGS = -O2 -Wall -Wno-unknown-pragmas
 #CFLAGS = -g -Wall -Wno-unknown-pragmas -palmos4.0
 
 all: registered unregistered registered_color unregistered_color
@@ -47,12 +48,12 @@ hercule_tilesets.o: hercule_tilesets.h hercule.h hercule_tilesets.c hercule_even
 
 resources_reg: hercule.rcp hercule_monochrome.rcp hercule_reg.rcp herculeRsc.h
 	cat hercule.rcp hercule_monochrome.rcp hercule_reg.rcp > temp.rcp
-	pilrc -q -I . temp.rcp
+	$(PILRC) -q -I . temp.rcp
 	rm temp.rcp
 
 resources_unreg: hercule.rcp hercule_monochrome.rcp hercule_unreg.rcp herculeRsc.h
 	cat hercule.rcp hercule_monochrome.rcp hercule_unreg.rcp > temp.rcp
-	pilrc -q -I . temp.rcp
+	$(PILRC) -q -I . temp.rcp
 	rm temp.rcp
 
 clean:

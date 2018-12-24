@@ -1,7 +1,8 @@
 include make.inc
 
 #CFLAGS = -O2 -Wall -Wno-unknown-pragmas `palm-config --cflags` -DCOLOR
-CFLAGS = -O2 -Wall -Wno-unknown-pragmas -palmos5.0 -DCOLOR
+#CFLAGS = -O2 -Wall -Wno-unknown-pragmas -palmos5.0 -DCOLOR
+CFLAGS = -O2 -Wall -Wno-unknown-pragmas -DCOLOR
 #CFLAGS = -O2 -Wall -Wno-unknown-pragmas -palmos4.0 -DCOLOR
 
 reg: reg/.intermediate_c resources_reg_color
@@ -28,12 +29,12 @@ unreg/hercule_c.o: hercule.c herculeRsc.h hercule_engine_palm.h progress_dlg.h s
 
 resources_reg_color: hercule.rcp hercule_color.rcp hercule_reg.rcp herculeRsc.h
 	cat hercule.rcp hercule_color.rcp hercule_reg.rcp > temp.rcp
-	pilrc -q -I . temp.rcp
+	$(PILRC) -q -I . temp.rcp
 	rm temp.rcp
 
 resources_unreg_color: hercule.rcp hercule_color.rcp hercule_unreg.rcp herculeRsc.h
 	cat hercule.rcp hercule_color.rcp hercule_unreg.rcp > temp.rcp
-	pilrc -q -I . temp.rcp
+	$(PILRC) -q -I . temp.rcp
 	rm temp.rcp
 
 

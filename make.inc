@@ -1,5 +1,6 @@
 CC = m68k-palmos-gcc
 MULTIGEN=m68k-palmos-multigen
+PILRC=pilrc
 
 GENERAL_OBJS=\
 	hercule_engine_palm.o \
